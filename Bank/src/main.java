@@ -1,11 +1,27 @@
 public class main {
     public static void main(String[] args) {
 
-        // 1 - Create a bancomat and an ebanking
+        // 1 - Create a bank which contain a bancomat and an ebanking
+        Bank bank = new Bank();
 
         // 2 - Create 3 customers
+        Customer c1 = new Customer("Jean", "password1", 1234);
+        Customer c2 = new Customer("David", "password2", 3456);
+        Customer c3 = new Customer("Paul", "password3", 3333);
+
+        bank.addCustomer(c1);
+        bank.addCustomer(c2);
+        bank.addCustomer(c3);
 
         // 3 - Add 1 account for each customer with a balance of 100 each
+        Account a1 = new Account(c1, "Compte 1", 100.0);
+        c1.addAccount(a1);
+
+        Account a2 = new Account(c1, "Compte 2", 100.0);
+        c2.addAccount(a2);
+
+        Account a3 = new Account(c1, "Compte 3", 100.0);
+        c3.addAccount(a3);
 
         // 4 - Try to create an account for customer 1 with a wrong password
 
