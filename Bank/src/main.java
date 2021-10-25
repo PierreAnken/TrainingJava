@@ -51,7 +51,7 @@ public class main {
 
         // 10 - Transfert 150 from customer 3 to customer 1 with E-banking
         System.out.println("\n=== 10 ===");
-        bank.getEbanking().transfer(150, c3.getAccounts().get(0), c1.getAccounts().get(0), "password1");
+        bank.getEbanking().transfer(150, c3.getAccounts().get(0), c1.getAccounts().get(0), "password3");
 
         // 11 - Display all customer with their account balance
         System.out.println("\n=== 11 ===");

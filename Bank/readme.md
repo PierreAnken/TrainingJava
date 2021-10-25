@@ -66,16 +66,17 @@ For each operation
 - To withdraw money, please come to our bancomat.
 
 === 10 ===
-- Paul identity not validated, operation refused.
+- Transfert from Account 3 to Account 1 with 150.0 done.
+- new balances 50.0 - 200.0
 
 === 11 ===
 - Customer List
 - Jean
--  Account 1 - 50.0
+-  Account 1 - 250.0
 - David
 -  Account 2 - 150.0
 - Paul
-- Account 3 - 200.0
+- Account 3 - 50.0
 
 ### Feedbacks
 Please feel free to contact me with you feedbacks which are welcome.
