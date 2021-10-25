@@ -21,16 +21,8 @@ public class Customer {
     }
 
 
-    public int getPinCode() {
-        return pinCode;
-    }
-
     public String getName() {
         return name;
-    }
-
-    public String getEBankingPassword() {
-        return eBankingPassword;
     }
 
     public boolean checkStateActive() {
