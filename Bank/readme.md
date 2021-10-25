@@ -43,7 +43,7 @@ For each operation
 - New account 'Account 3' created for Paul.
 
 === 4 ===
-Jean identity not validated, operation refused.
+- Jean identity not validated, operation refused.
 
 === 5 ===
 - Transfert from Account 1 to Account 2 with 50.0 done.
