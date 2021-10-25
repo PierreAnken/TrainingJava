@@ -1,17 +1,17 @@
 # Java Training project V1.2
 
-###Used functionalities
+### Used functionalities
 - Interface
 - Enumeration
 - Abstract types (E)
 
-###Description
+### Description
 - We manage a bank where customers have accounts.
 - The bank has a bancomat and an E-banking
 - They can create an account, add money on it and get money out.
 - They can as well transfer money to another account
 
-###Implementation
+### Implementation
 Implements the interface BankOperations in the objects Bancomat and EBanking
 - In the bancomat the identity is tested with a pin code (int) and in E-banking with a password (String)
 - There is only one Bank, which contain 1 Bancomat and 1 E-banking
@@ -28,7 +28,7 @@ For each operation
 - The customer is informed about any exception during an operation
 - The customer is always informed about the account balance after each successful operation.
 
-###Expected output
+### Expected output
 === 1 ===
 - New bank created
 
@@ -77,5 +77,5 @@ Jean identity not validated, operation refused.
 - Paul
 - Account 3 - 200.0
 
-###Feedbacks
+### Feedbacks
 Please feel free to contact me with you feedbacks which are welcome.
