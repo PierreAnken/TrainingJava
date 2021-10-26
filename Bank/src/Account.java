@@ -1,4 +1,4 @@
-public class Account {
+public class Account implements IAccount{
     private final String name;
     private final Customer customer;
     private double balance;
@@ -31,5 +31,10 @@ public class Account {
             balance = newBalance;
             return true;
         }
+    }
+
+    @Override
+    public String getPartner() {
+        return "none";
     }
 }

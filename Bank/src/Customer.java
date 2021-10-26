@@ -8,7 +8,7 @@ public class Customer {
     private String eBankingPassword;
     private int invalidLogins;
     private CustomerState state;
-    private List<Account> accounts;
+    private List<IAccount> accounts;
 
 
     public Customer(String name, String eBankingPassword, int pinCode){
@@ -35,7 +35,7 @@ public class Customer {
         }
     }
 
-    public List<Account> getAccounts() {
+    public List<IAccount> getAccounts() {
         return accounts;
     }
 

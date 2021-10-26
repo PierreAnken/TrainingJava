@@ -3,7 +3,7 @@
 public class EBanking implements BankOperations {
 
     @Override
-    public <T> void transfer(double amount, Account fromAccount, Account toAccount, T password) {
+    public <T> void transfer(double amount, IAccount fromAccount, IAccount toAccount, T password) {
 
         if(identifyCustomer(fromAccount.getCustomer(), password)){
 
@@ -24,12 +24,12 @@ public class EBanking implements BankOperations {
     }
 
     @Override
-    public <T> void withdraw(double amount, Account fromAccount, T password) {
+    public <T> void withdraw(double amount, IAccount fromAccount, T password) {
         System.out.println("To withdraw money, please come to our bancomat.");
     }
 
     @Override
-    public <T> void deposit(double amount, Account toAccount, T password) {
+    public <T> void deposit(double amount, IAccount toAccount, T password) {
         System.out.println("To deposit money, please come to our bancomat.");
     }
 
@@ -39,6 +39,17 @@ public class EBanking implements BankOperations {
             if(c.checkStateActive()){
                 Account newAccount = new Account(c, accountName, balance);
                 c.getAccounts().add(newAccount);
+                System.out.println("New account '"+accountName+"' created for "+c.getName()+".");
+            }
+        }
+    }
+
+    @Override
+    public <T> void createAccountWithPartner(Customer c, double balance, String accountName, T password, String partner) {
+        if(identifyCustomer(c, password)){
+            if(c.checkStateActive()){
+                AccountWithPartner accountWithPartner = new AccountWithPartner(partner, new Account(c, accountName, balance));
+                c.getAccounts().add(accountWithPartner);
                 System.out.println("New account '"+accountName+"' created for "+c.getName()+".");
             }
         }

@@ -31,8 +31,9 @@ public class Bank {
         StringBuilder customerList = new StringBuilder("Customer List");
         for (Customer customer: customers) {
             customerList.append("\n").append(customer.getName());
-            for (Account account: customer.getAccounts()) {
+            for (IAccount account: customer.getAccounts()) {
                 customerList.append("\n ").append(account.getName()).append(" - ").append(account.getBalance());
+                customerList.append("\n Partner: ").append(account.getPartner());
             }
         }
         return customerList.toString();

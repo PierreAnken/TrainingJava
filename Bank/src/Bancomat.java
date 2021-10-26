@@ -2,12 +2,12 @@ public class Bancomat implements BankOperations {
 
 
     @Override
-    public <T> void transfer(double amount, Account fromAccount, Account toAccount, T pincode) {
+    public <T> void transfer(double amount, IAccount fromAccount, IAccount toAccount, T pincode) {
         System.out.println("Please use your e-banking to create an transfer.");
     }
 
     @Override
-    public <T> void withdraw(double amount, Account fromAccount, T pincode) {
+    public <T> void withdraw(double amount, IAccount fromAccount, T pincode) {
         if(amount<=0){
             System.out.println("Please enter a valid amount.");
         }
@@ -19,7 +19,7 @@ public class Bancomat implements BankOperations {
     }
 
     @Override
-    public <T> void deposit(double amount, Account toAccount, T pincode) {
+    public <T> void deposit(double amount, IAccount toAccount, T pincode) {
         if(amount<=0){
             System.out.println("Please enter a valid amount.");
         }
@@ -32,6 +32,11 @@ public class Bancomat implements BankOperations {
 
     @Override
     public <T> void createAccount(Customer c, double balance, String accountName, T pincode) {
+        System.out.println("Please use your e-banking to create an account.");
+    }
+
+    @Override
+    public <T> void createAccountWithPartner(Customer c, double balance, String accountName, T password, String partner) {
         System.out.println("Please use your e-banking to create an account.");
     }
 

@@ -16,7 +16,7 @@ public class main {
 
         // 3 - Add 1 account for each customer with a balance of 100 each
         System.out.println("\n=== 3 ===");
-        bank.getEbanking().createAccount(c1, 100 ,"Account 1", "password1");
+        bank.getEbanking().createAccountWithPartner(c1, 100 ,"Account 1", "password1", "Sophie");
         bank.getEbanking().createAccount(c2, 100 ,"Account 2", "password2");
         bank.getEbanking().createAccount(c3, 100 ,"Account 3", "password3");
 
