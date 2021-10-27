@@ -2,8 +2,8 @@
 
 ### Used functionalities
 - Interface
-- Abstract data types (E)
-- Double custom linked list
+- Enumeration
+- Double "custom" linked list
 
 ### Description
 - We manage a train
