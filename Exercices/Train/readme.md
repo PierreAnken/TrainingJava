@@ -33,4 +33,18 @@ Adding <things> to wagons and locomotive:
 - The train has 10 wagons.
 
 === 4 ===
-- Composition: <[]__]-[o o o]-[o o o]-[o o o]-[o o o]-[o o o]-[o o o]-[x x]-[x x]-[x x]
+- Composition: <[]__]-[ m ]-[ m ]-[ m ]-[ p ]-[ p ]-[ p ]-[ p ]-[ p ]-[ p ]-[ p ]
+
+=== 5 ===
+- We loaded 45 people over 45
+
+=== 6 ===
+- They are 95 free seats in the train.
+
+=== 7 ===
+- Sorry, the train is full you have to wait the next one.
+- We loaded 95 people over 100
+
+=== 8 ===
+- They are 40 free seats in the train.
+- Composition: <[]__]-[ p ]-[ p ]-[ m ]-[ m ]-[ m ]-[ p ]-[ p ]-[ p ]-[ p ]-[ p ]-[ p ]-[ p ]

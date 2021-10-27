@@ -1,8 +1,6 @@
 package train.wagons;
 
-import train.WagonType;
 import train.things.Coal;
-import train.wagons.AWagon;
 
 public class Locomotive extends AWagon {
 
