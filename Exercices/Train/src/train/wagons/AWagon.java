@@ -18,11 +18,11 @@ public abstract class AWagon{
     }
 
     boolean setContent(Thing something, int emplacement){
-        
+        return false;
     }
 
     public int getStorageunitWeight() {
-        
+        return 0;
     }
 
     public void setRearWagon(AWagon AWagon){

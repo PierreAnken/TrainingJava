@@ -1,5 +1,4 @@
 import train.Train;
-import train.things.Person;
 
 public class main {
     public static void main(String[] args) {

@@ -16,7 +16,7 @@ public class Locomotive extends AWagon {
     }
 
     public int getRemainingCoal(){
-        
+        return 0;
     }
 
 }

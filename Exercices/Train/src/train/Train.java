@@ -10,7 +10,9 @@ public class Train {
     private AWagon lastWagon;
 
     public Train(){
-        
+        locomotive = new Locomotive();
+        lastWagon = locomotive;
+        System.out.println("We got a brand new train.");
     }
 
     public void addWagonAtStart(AWagon wagon){
@@ -22,7 +24,7 @@ public class Train {
     }
 
     public int countWagon(){
-        
+        return 0;
     }
 
     public void add10Wagons(){
@@ -31,7 +33,7 @@ public class Train {
     }
 
     public String getComposition(){
-        
+        return "";
     }
 
     public Locomotive getLocomotive() {
