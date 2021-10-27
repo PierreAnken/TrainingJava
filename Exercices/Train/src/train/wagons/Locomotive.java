@@ -1,8 +1,6 @@
 package train.wagons;
 
-import train.WagonType;
 import train.things.Coal;
-import train.wagons.AWagon;
 
 public class Locomotive extends AWagon {
 
@@ -12,11 +10,13 @@ public class Locomotive extends AWagon {
     }
 
     public void refuel(int coalQuantity){
-       
+
+
     }
 
+
     public int getRemainingCoal(){
-        return 0;
+        return ((Coal) storage[0]).getQuantity();
     }
 
 }

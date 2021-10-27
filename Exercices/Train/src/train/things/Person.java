@@ -2,6 +2,9 @@ package train.things;
 
 import train.things.Thing;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class Person implements Thing {
     private final String name;
     private final int age;
@@ -31,4 +34,12 @@ public class Person implements Thing {
         return 1;
     }
 
+    public static List<Person> generateListPeople(int amount){
+        List<Person> passengers = new ArrayList<>();
+        for (int i = 0; i < amount; i++) {
+            Person person = new Person("person"+i, 70, 35);
+            passengers.add(person);
+        }
+        return passengers;
+    }
 }

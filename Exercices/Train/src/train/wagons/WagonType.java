@@ -1,7 +1,7 @@
-package train;
+package train.wagons;
 
 public enum WagonType {
     LOCOMOTIVE,
-    PEOPLE,
+    PASSENGER,
     MERCHANDISES
 }

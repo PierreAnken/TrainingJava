@@ -1,7 +1,9 @@
 package train.wagons;
 
-import train.WagonType;
 import train.things.Thing;
+
+import java.util.ArrayList;
+import java.util.List;
 
 public abstract class AWagon{
     protected Thing[] storage;
@@ -17,11 +19,28 @@ public abstract class AWagon{
         return storage;
     }
 
-    boolean setContent(Thing something, int emplacement){
-        return false;
+    public List<Integer> getEmptyEmplacement(){
+        List<Integer> emptyEmplacements = new ArrayList<>();
+
+
+
+        return emptyEmplacements;
+    }
+
+    public boolean setContent(Thing something, int emplacement){
+
+
+        return true;
+    }
+
+    public Thing getContent(int emplacement){
+
+        return null;
+
     }
 
     public int getStorageunitWeight() {
+
         return 0;
     }
 
