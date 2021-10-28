@@ -1,6 +1,7 @@
 package train;
 
 import train.things.Person;
+import train.things.Thing;
 import train.wagons.*;
 
 import java.util.List;
@@ -15,7 +16,7 @@ public class Train {
         System.out.println("We got a brand new train.");
     }
 
-    public void addWagonAtStart(AWagon wagon) {
+    public void addWagonInFront(AWagon wagon) {
 
         // If we already have wagon
         if (locomotive.getRearWagon() != null) {
@@ -86,9 +87,9 @@ public class Train {
     }
 
     public int countWagon() {
-        AWagon current = locomotive;
+        AWagon current = locomotive.getRearWagon();
         int count = 0;
-        while (current.getRearWagon() != null) {
+        while (current != null) {
             count += 1;
             current = current.getRearWagon();
         }
@@ -96,12 +97,10 @@ public class Train {
     }
 
     public String getComposition() {
-        AWagon current = locomotive;
-        StringBuilder composition = new StringBuilder();
+        AWagon current = locomotive.getRearWagon();
+        StringBuilder composition = new StringBuilder("<[] __]");
         while (current!= null) {
-            if (current.getType() == WagonType.LOCOMOTIVE) {
-                composition.append("<[]__]");
-            } else if (current.getType() == WagonType.PASSENGER) {
+            if (current.getType() == WagonType.PASSENGER) {
                 composition.append("-[ p ]");
             } else {
                 composition.append("-[ m ]");
@@ -119,17 +118,28 @@ public class Train {
         return lastWagon;
     }
 
-    public void add10Wagons() {
-        // We add 6 PersonWagon and 3 MerchandiseWagon
-        for (int i = 0; i < 10; i++) {
-            if (i > 2) {
-                PassengerWagon personWagon = new PassengerWagon();
-                addWagonAtEnd(personWagon);
-            } else {
-                MerchandiseWagon merchandiseWagon = new MerchandiseWagon();
-                addWagonAtEnd(merchandiseWagon);
-            }
+    public void addWagons(int passengers, int merchandise) {
+
+        for (int i = 0; i < passengers; i++) {
+            addWagonAtEnd(new PassengerWagon());
         }
+
+        for (int i = 0; i < merchandise; i++) {
+            addWagonAtEnd(new MerchandiseWagon());
+        }
+    }
+
+    public double getThingsWeight(WagonType wagonType){
+        AWagon current = locomotive.getRearWagon();
+        double totalWeight = 0;
+
+        while (current!= null) {
+            if (current.getType() == wagonType || wagonType == null) {
+                totalWeight += current.getStorageunitWeight();
+            }
+            current = current.getRearWagon();
+        }
+        return totalWeight;
     }
 
 }

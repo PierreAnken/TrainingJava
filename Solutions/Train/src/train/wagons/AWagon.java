@@ -55,7 +55,9 @@ public abstract class AWagon{
     public int getStorageunitWeight() {
         int weight = 0;
         for (Thing t: storage) {
-            weight += t.getUnitWeight();
+            if(t != null){
+                weight += t.getUnitWeight() * t.getQuantity();
+            }
         }
         return weight;
     }

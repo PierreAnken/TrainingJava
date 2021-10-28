@@ -1,10 +1,8 @@
 package train.things;
 
-import train.things.Thing;
-
 public class Merchandise implements Thing {
     private final String name;
-    private double unitWeight;
+    private final double unitWeight;
     private int quantity;
 
 
