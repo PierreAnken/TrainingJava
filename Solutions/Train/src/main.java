@@ -49,7 +49,14 @@ public class main {
         System.out.println("They are "+train.getRemainingSeat()+" free seats in the train.");
         System.out.println("Composition: "+train.getComposition());
 
-        // 9 - Get weight of transported merchandises and passengers
+
+        // 9 - Add a passenger wagon at position 3 and 5 and print composition
+        System.out.println("\n=== 9 ===");
+        train.addWagonAtPosition(WagonType.MERCHANDISES, 3);
+        train.addWagonAtPosition(WagonType.MERCHANDISES, 5);
+        System.out.println("Composition: "+train.getComposition());
+
+        // 10 - Get weight of transported merchandises and passengers
         System.out.println("\n=== 9 ===");
         System.out.println("The total weight of merchandises is: "+train.getThingsWeight(WagonType.MERCHANDISES));
         System.out.println("The total weight of passengers is: "+train.getThingsWeight(WagonType.PASSENGER));

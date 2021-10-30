@@ -142,4 +142,35 @@ public class Train {
         return totalWeight;
     }
 
+    public void addWagonAtPosition(WagonType wagonType, int position) {
+
+        AWagon wagonFront = locomotive;
+        int currentPosition = 0;
+
+        // We move one step before the position
+        while(wagonFront.getRearWagon() != null && currentPosition < position-1) {
+            wagonFront = wagonFront.getRearWagon();
+            currentPosition++;
+        }
+
+        AWagon wagonRear = wagonFront.getRearWagon();
+
+        AWagon newWagon;
+        if(wagonType == WagonType.PASSENGER){
+            newWagon = new PassengerWagon();
+        }else{
+            newWagon = new MerchandiseWagon();
+        }
+
+        newWagon.setRearWagon(wagonRear);
+        newWagon.setFrontWagon(wagonFront);
+
+        wagonFront.setRearWagon(newWagon);
+
+        if(wagonRear == null){
+            lastWagon = newWagon;
+        }else{
+            wagonRear.setFrontWagon(newWagon);
+        }
+    }
 }
