@@ -20,28 +20,22 @@ public abstract class AWagon{
     }
 
     public List<Integer> getEmptyEmplacement(){
-        List<Integer> emptyEmplacements = new ArrayList<>();
-
-
-
-        return emptyEmplacements;
+        // TODO: Implements
     }
 
     public boolean setContent(Thing something, int emplacement){
 
+        // TODO: Implements
 
-        return true;
     }
 
     public Thing getContent(int emplacement){
-
-        return null;
+        // TODO: Implements
 
     }
 
-    public int getStorageunitWeight() {
-
-        return 0;
+    public int getStorageWeight() {
+        // TODO: Implements
     }
 
     public void setRearWagon(AWagon AWagon){

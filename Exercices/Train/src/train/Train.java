@@ -8,43 +8,36 @@ import java.util.List;
 public class Train {
     private final Locomotive locomotive;
     private AWagon lastWagon;
+    private int kilometers;
 
     public Train() {
-        
-
+        // TODO: Implements
     }
 
-    public void addWagonAtStart(AWagon wagon) {
+    public void addWagonInFront(AWagon wagon) {
 
-
+        // TODO: Implements
     }
 
     public int getRemainingSeat(){
-
-        return 0;
+        // TODO: Implements
     }
 
     public List<Person> loadPassengers(List<Person> passengers) {
 
-
-
-
-        return passengers;
+        // TODO: Implements
     }
 
     public void addWagonAtEnd(AWagon wagon) {
-
-
+        // TODO: Implements
     }
 
     public int countWagon() {
-
-        return 0;
+        // TODO: Implements
     }
 
     public String getComposition() {
-
-        return "";
+        // TODO: Implements
     }
 
     public Locomotive getLocomotive() {
@@ -55,17 +48,29 @@ public class Train {
         return lastWagon;
     }
 
-    public void add10Wagons() {
-        // We add 6 PersonWagon and 3 MerchandiseWagon
-        for (int i = 0; i < 10; i++) {
-            if (i > 2) {
-                PassengerWagon personWagon = new PassengerWagon();
-                addWagonAtEnd(personWagon);
-            } else {
-                MerchandiseWagon merchandiseWagon = new MerchandiseWagon();
-                addWagonAtEnd(merchandiseWagon);
-            }
+    public void addWagons(int passengers, int merchandise) {
+
+        for (int i = 0; i < passengers; i++) {
+            addWagonAtEnd(new PassengerWagon());
+        }
+
+        for (int i = 0; i < merchandise; i++) {
+            addWagonAtEnd(new MerchandiseWagon());
         }
     }
 
+    public double getThingsWeight(WagonType wagonType){
+        // Return wagons weight by wagonType. If wagonType is null take all.
+
+        // TODO: Implements
+    }
+
+    public void run(int km) {
+        // TODO: Implements
+    }
+
+    public void addWagonAtPosition(WagonType wagonType, int position) {
+
+        // TODO: Implements
+    }
 }

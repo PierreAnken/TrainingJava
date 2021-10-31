@@ -5,17 +5,29 @@ import java.util.List;
 
 public class Supermarket {
     private List<Cashier> cashiers;
+
     public Supermarket(){
-        cashiers = new ArrayList<>();
-        System.out.println("A new supermarkt openend");
+        // TODO: Implements
     }
 
     public void addCashier(Cashier cashier){
-        cashiers.add(cashier);
+        // TODO: Implements
     }
 
     public List<Cashier> getCashiers(){
         return cashiers;
+    }
+
+    public void openCashier(){
+        // TODO: Implements
+    }
+
+    public void closeCashier(){
+        // TODO: Implements
+    }
+
+    public String toString(){
+        // TODO: Implements
     }
 
 }

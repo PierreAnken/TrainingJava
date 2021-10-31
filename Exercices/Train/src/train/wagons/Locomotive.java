@@ -10,13 +10,18 @@ public class Locomotive extends AWagon {
     }
 
     public void refuel(int coalQuantity){
-
+        // TODO: Implements
 
     }
 
 
     public int getRemainingCoal(){
-        return ((Coal) storage[0]).getQuantity();
+        return storage[0].getQuantity();
+    }
+
+    public boolean consume(int coalQuantity){
+
+        // TODO: Implements
     }
 
 }

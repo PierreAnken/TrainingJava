@@ -48,7 +48,7 @@ public class Train {
 
     public List<Person> loadPassengers(List<Person> passengers) {
 
-        AWagon current = locomotive.getRearWagon();//on commence avec le premier wagon
+        AWagon current = locomotive.getRearWagon();
         int toLoad = passengers.size();
         int seatAvailable = getRemainingSeat();
 
@@ -150,7 +150,6 @@ public class Train {
         AWagon wagonFront = locomotive;
         int currentPosition = 0;
 
-        // We move one step before the position
         while(wagonFront.getRearWagon() != null && currentPosition < position-1) {
             wagonFront = wagonFront.getRearWagon();
             currentPosition++;
