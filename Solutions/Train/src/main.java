@@ -26,16 +26,15 @@ public class main {
         System.out.println("\n=== 4 ===");
         System.out.println("Composition: "+train.getComposition());
 
-        // 5- Get empty seat amount
-        System.out.println("\n=== 6 ===");
-        System.out.println("They are "+train.getRemainingSeat()+" free seats in the train.");
-
-        // 6 - Add 45 passenger to train
+        // 5 - Add 45 passenger to train
         System.out.println("\n=== 5 ===");
         int amountPassenger = 45;
         List<Person> passengersWithoutSeat = train.loadPassengers(Person.generateListPeople(amountPassenger));
         System.out.println("We loaded "+(amountPassenger-passengersWithoutSeat.size()) +" people over "+amountPassenger);
 
+        // 6 - Get empty seat amount
+        System.out.println("\n=== 6 ===");
+        System.out.println("They are "+train.getRemainingSeat()+" free seats in the train.");
 
         // 7 - Try to add 20 passengers to the train
         System.out.println("\n=== 7 ===");
@@ -50,13 +49,19 @@ public class main {
         System.out.println("They are "+train.getRemainingSeat()+" free seats in the train.");
         System.out.println("Composition: "+train.getComposition());
 
-        // 9 - Get total weight of transported merchandises and passengers
+        // 9 - Get weight of transported merchandises and passengers
         System.out.println("\n=== 9 ===");
         System.out.println("The total weight of merchandises is: "+train.getThingsWeight(WagonType.MERCHANDISES));
         System.out.println("The total weight of passengers is: "+train.getThingsWeight(WagonType.PASSENGER));
 
-        // 10 - Make the train run 50 km and display remaining coil (consumption = wagons * km * 2 coal)
+        // 10 - Add a passenger wagon at position 3 and 5 and print composition
         System.out.println("\n=== 10 ===");
+        train.addWagonAtPosition(WagonType.MERCHANDISES, 3);
+        train.addWagonAtPosition(WagonType.MERCHANDISES, 5);
+        System.out.println("Composition: "+train.getComposition());
+
+        // 11 - Make the train run 50 km and display remaining coil (consumption = wagons * km * 2 coal)
+        System.out.println("\n=== 11 ===");
         train.run(50);
 
 
