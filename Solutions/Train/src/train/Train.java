@@ -1,7 +1,6 @@
 package train;
 
 import train.things.Person;
-import train.things.Thing;
 import train.wagons.*;
 
 import java.util.List;
@@ -9,10 +8,12 @@ import java.util.List;
 public class Train {
     private final Locomotive locomotive;
     private AWagon lastWagon;
+    private int kilometers;
 
     public Train() {
         locomotive = new Locomotive();
         lastWagon = locomotive;
+        kilometers = 0;
         System.out.println("We got a brand new train.");
     }
 
@@ -47,36 +48,26 @@ public class Train {
 
     public List<Person> loadPassengers(List<Person> passengers) {
 
-        AWagon wagon = locomotive.getRearWagon();
+        AWagon current = locomotive.getRearWagon();//on commence avec le premier wagon
+        int toLoad = passengers.size();
+        int seatAvailable = getRemainingSeat();
 
-        //we move from wagon to wagon and fill them
-        while (wagon != null && passengers.size() > 0) {
+        while(toLoad>0 && seatAvailable > 0){
 
-            if (wagon.getType() == WagonType.PASSENGER) {
+            List<Integer> placesLibre = current.getEmptyEmplacement();
 
-                //we move from free seat to free seat and fill them
-                while (wagon.getEmptyEmplacement().size() > 0 && passengers.size() > 0) {
-                    List<Integer> remainingSeats = wagon.getEmptyEmplacement();
-
-                    //we put the passenger in seat
-                    while (remainingSeats.size() > 0 && passengers.size() > 0) {
-                        Person passenger = passengers.get(0);
-                        passengers.remove(passenger);
-
-                        int freeSeatNbr = remainingSeats.get(0);
-                        remainingSeats.remove(0);
-                        if(wagon.getContent(freeSeatNbr) != null)
-                            System.out.println("not empty seat!");
-                        wagon.setContent(passenger, freeSeatNbr);
-                    }
-                }
+            if(current.getType() != WagonType.PASSENGER || placesLibre.isEmpty()){
+                current = current.getRearWagon();
+                continue;
             }
-            wagon = wagon.getRearWagon();
+
+            Person somePassenger = passengers.get(0);
+            current.setContent(somePassenger, placesLibre.get(0));
+            passengers.remove(somePassenger);
+            toLoad--;
+            seatAvailable--;
         }
-        // we return the passengers which were not able to get a seat
-        if(passengers.size() > 0){
-            System.out.println("Sorry, the train is full you have to wait the next one.");
-        }
+
         return passengers;
     }
 
@@ -130,16 +121,27 @@ public class Train {
     }
 
     public double getThingsWeight(WagonType wagonType){
+        // Return wagons weight by wagonType. If wagonType is null take all.
+
         AWagon current = locomotive.getRearWagon();
         double totalWeight = 0;
 
         while (current!= null) {
             if (current.getType() == wagonType || wagonType == null) {
-                totalWeight += current.getStorageunitWeight();
+                totalWeight += current.getStorageWeight();
             }
             current = current.getRearWagon();
         }
         return totalWeight;
     }
 
+    public void run(int km) {
+        System.out.println("We received the order to run "+km+ " km");
+        int consumptionByKM = countWagon() * 2;
+        while(locomotive.consume(consumptionByKM) && km > 0){
+            kilometers++;
+            km--;
+        }
+        System.out.println("The train stop at kilometer "+kilometers);
+    }
 }

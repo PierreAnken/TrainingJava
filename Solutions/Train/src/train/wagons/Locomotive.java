@@ -21,7 +21,24 @@ public class Locomotive extends AWagon {
 
 
     public int getRemainingCoal(){
-        return ((Coal) storage[0]).getQuantity();
+        return storage[0].getQuantity();
+    }
+
+    public boolean consume(int coalQuantity){
+
+        if(storage[0] == null){
+            System.out.println("No coal in locomotive");
+            return false;
+
+        }else if(storage[0].getQuantity() < coalQuantity ){
+            System.out.println("Locomotive is out of coal");
+            return false;
+
+        }else{
+
+            ((Coal)storage[0]).add(-coalQuantity);
+            return true;
+        }
     }
 
 }

@@ -31,14 +31,15 @@ public abstract class AWagon{
     }
 
     public boolean setContent(Thing something, int emplacement){
-        if(emplacement > storage.length-1 || emplacement < 0){
-            System.out.println("The emplacement "+emplacement+ " does not exit.");
-            return false;
+
+        if(emplacement >= 0 && emplacement < storage.length){
+            if(storage[emplacement] == null){
+                storage[emplacement] = something;
+                return true;
+            }
         }
-        else{
-            storage[emplacement] = something;
-            return true;
-        }
+        return false;
+
     }
 
     public Thing getContent(int emplacement){
@@ -52,7 +53,7 @@ public abstract class AWagon{
 
     }
 
-    public int getStorageunitWeight() {
+    public int getStorageWeight() {
         int weight = 0;
         for (Thing t: storage) {
             if(t != null){
