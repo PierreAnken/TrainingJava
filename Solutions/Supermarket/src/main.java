@@ -9,7 +9,7 @@ public class main {
         System.out.println("\n=== 1 ===");
         Supermarket supermarket = new Supermarket();
 
-        // 2 - Add 6 cashiers to the supermarket
+        // 2 - Add 5 cashiers to the supermarket
         System.out.println("\n=== 2 ===");
         for (int i = 1; i <= 5; i++) {
             supermarket.addCashier(new Cashier(i));
@@ -26,7 +26,6 @@ public class main {
         }
 
         // 5 - Create 16 customers, and add them to a cashier
-        // A customer always choose the cashier with the smallest queue.
         System.out.println("\n=== 5 ===");
         for (int i = 1; i <= 16; i++) {
             Customer customer = new Customer();

@@ -16,6 +16,8 @@ public class Customer {
     }
 
     public Cashier selectCashier(Supermarket supermarket){
+        // A customer always choose the cashier with the smallest queue.
+
         int smallestQueue = Integer.MAX_VALUE;
         Cashier chosenCashier = null;
 
