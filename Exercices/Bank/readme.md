@@ -12,21 +12,7 @@
 - They can as well transfer money to another account
 
 ### Implementation
-Implements the interface BankOperations in the objects Bancomat and EBanking
-- In the bancomat the identity is tested with a pin code (int) and in E-banking with a password (String)
-- There is only one Bank, which contain 1 Bancomat and 1 E-banking
-- You can only withdraw or deposit money from Bancomat. 
-- You can only transfer money or create new accounts in E-banking
-- Three error in the identification should lock the customer.
-- The different state should be managed with the enumeration CustomerState.
-- You should not be able to transfer money from/to the same account
-
-For each operation
-- Check the identity of the customer.
-- No negative sold on any account is allowed.
-- In case of error the balance of the account should be the same as before the transaction
-- The customer is informed about any exception during an operation
-- The customer is always informed about the account balance after each successful operation.
+- You are not allowed to add any method or to change any method signature
 
 ### Expected output
 === 1 ===
