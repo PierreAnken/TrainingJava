@@ -20,10 +20,16 @@ public class Supermarket {
 
     public void openCashier(){
         // TODO: Implements
+
+        if(false)
+            System.out.println("No more cashier available");
     }
 
     public void closeCashier(){
         // TODO: Implements
+
+        if(false)
+            System.out.println("No cashier is open");
     }
 
     public String toString(){

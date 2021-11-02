@@ -8,6 +8,7 @@
 ### Description
 - We manage a supermarket.
 - The supermarket has cashiers, which can process customers when they are open.
+- Customers always look for the first empty cashier or the one with the smallest queue
 
 ### Implementation
 - You are not allowed to add any method or to change any method signature

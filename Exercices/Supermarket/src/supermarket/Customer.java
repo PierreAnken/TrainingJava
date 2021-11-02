@@ -16,6 +16,7 @@ public class Customer {
     }
 
     public Cashier selectCashier(Supermarket supermarket){
+        // A customer always choose the cashier with the smallest queue.
         // TODO: Implements
         return chosenCashier;
     }
