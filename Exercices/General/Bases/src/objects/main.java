@@ -1,4 +1,4 @@
-package classes;
+package objects;
 
 public class main {
     public static void main(String[] args) {
@@ -8,6 +8,14 @@ public class main {
 
         System.out.println(audi);
         System.out.println(ford);
+
+        Parking parking = new Parking(10);
+        parking.ParkCar(audi);
+        System.out.println(parking);
+
+        parking.ParkCar(ford, 5);
+        System.out.println(parking);
+
 
     }
 }
