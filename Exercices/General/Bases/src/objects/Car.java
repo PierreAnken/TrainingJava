@@ -1,4 +1,4 @@
-package classes;
+package objects;
 
 import javax.naming.InvalidNameException;
 import javax.naming.directory.InvalidAttributeValueException;
@@ -42,5 +42,6 @@ public class Car {
     public static void outOfOrder(){
         canBeOrdered = false;
     }
+
 }
 
