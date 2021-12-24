@@ -40,7 +40,7 @@ public class Parking {
             if (parkedCar == null) {
                 parkingContent.append("[ ]");
             } else {
-                parkingContent.append("["+parkedCar.getBrand()+"]");
+                parkingContent.append("[A]");
             }
         }
 

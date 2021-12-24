@@ -1,8 +1,5 @@
 package animals;
 
-public abstract class Animal {
+public abstract class Animal implements InfoInterface{
     protected String name;
-
-    abstract void giveInfo();
-
 }
