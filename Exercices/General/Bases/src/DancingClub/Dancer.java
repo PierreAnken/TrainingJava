@@ -14,7 +14,41 @@ public class Dancer extends Person {
 
     @Override
     void describeMyself() {
-        System.out.println("I'm a dancer. "+super.toString());
+        System.out.println(this);
     }
 
+    public String toString(){
+         return "I'm a dancer. "+super.toString();
+    }
+
+
+
+    public void enterClub(DancingClub club){
+
+        boolean floorFound = false;
+        for (DancingFloor floor: club.getFloors()) {
+            if(favouriteFloorType == floor.getFloorType()){
+                floor.allowDancer(this);
+                floorFound = true;
+                break;
+            }
+        }
+
+        if(!floorFound){
+            for (DancingFloor floor: club.getFloors()){
+                for (Dancer dancer: floor.getDancers()) {
+                    if(favouriteGenderPartner == dancer.getGenderType()){
+                        floor.allowDancer(this);
+                        floorFound = true;
+                        break;
+                    }
+                }
+            }
+        }
+
+        if(!floorFound){
+            System.out.println("No interesting floor, leaving.");
+        }
+
+    }
 }

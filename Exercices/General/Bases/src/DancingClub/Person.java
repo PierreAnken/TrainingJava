@@ -10,10 +10,14 @@ abstract class Person {
         this.genderType = genderType;
         this.firstName = firstName;
         this.lastName = lastName;
-
     }
+
     public String toString(){
         return firstName+" "+lastName+" "+genderType;
+    }
+
+    public GenderType getGenderType(){
+        return genderType;
     }
 
     abstract void describeMyself();
