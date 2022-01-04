@@ -1,5 +1,8 @@
 package DancingClub;
 
+import java.util.List;
+import java.util.Random;
+
 public class main {
     public static void main(String[] args) {
 
@@ -7,23 +10,23 @@ public class main {
         DancingFloor df2 = new DancingFloor(15, MaterialType.PLASTIC, false, "RedBox");
         DancingFloor df3 = new DancingFloor(10, MaterialType.CARPET, true, "BlueBox");
 
-        Dancer d1 = new Dancer(GenderType.MAN, "Paul", "Bettany", MaterialType.WOOD, null);
-        Dancer d2 = new Dancer(GenderType.WOMAN, "Pauline", "Tailor", MaterialType.PLASTIC, GenderType.MAN);
-        Dancer d3 = new Dancer(GenderType.MAN, "Bernie", "Sanders", MaterialType.CONCRETE, GenderType.WOMAN);
-        Dancer d4 = new Dancer(GenderType.UNDEFINED, "Jack", "Sparrow", MaterialType.CARPET, GenderType.UNDEFINED);
+        List<Dancer> dancers = Dancer.dancerGenerator(50);
 
         DancingClub dc1 = new DancingClub("PinkBox");
         dc1.buildFloor(df1);
         dc1.buildFloor(df2);
         dc1.buildFloor(df3);
 
-        dc1.registerMember(d1);
-        dc1.registerMember(d2);
-        dc1.registerMember(d3);
+        Random r = new Random();
 
-        d1.enterClub(dc1);
-        d2.enterClub(dc1);
-        d3.enterClub(dc1);
+        //Member registration
+        for (Dancer dancer: dancers) {
+            if(r.nextInt(10) > 0){
+                dc1.registerMember(dancer);
+            }else{
+                System.out.println("Sorry, club is full (for you): "+dancer.getId());
+            }
+        }
 
         System.out.println(dc1);
     }

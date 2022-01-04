@@ -29,7 +29,7 @@ public class Coffee {
         System.out.println(C1.equals(C2));
         System.out.println(C1 == C2);
 
-        ArrayList<Coffee> coffeeList = new ArrayList() ;
+        ArrayList<Coffee> coffeeList = new ArrayList();
         coffeeList.add(C1);
         coffeeList.add(C2);
         coffeeList.add(C3);
@@ -62,6 +62,4 @@ public class Coffee {
     public boolean equals(Object coffee) {
         return this.withCoffein == ((Coffee)coffee).withCoffein;
     }
-
-
 }

@@ -14,8 +14,19 @@ public class DancingClub {
     }
 
     public void registerMember(Dancer dancer){
-        members.add(dancer);
+       if(dancer.isVaccinated()){
+           if(dancer.getId() % 10 == 7){
+               System.out.println("I like your number (7), you'll get a free registration "+dancer.getId());
+
+           }
+           members.add(dancer);
+       }
+       else{
+           System.out.println("You're are not allowed to enter as you are not vaccinated: "+dancer.getId());
+       }
+
     }
+
 
     public void buildFloor(DancingFloor floor){
         floors.add(floor);
@@ -39,10 +50,6 @@ public class DancingClub {
         }
         return sb.toString();
     }
-
-
-
-
 
 
 }
