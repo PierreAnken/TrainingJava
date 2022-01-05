@@ -27,7 +27,6 @@ public class DancingClub {
 
     }
 
-
     public void buildFloor(DancingFloor floor){
         floors.add(floor);
 
