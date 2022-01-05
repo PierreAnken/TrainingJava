@@ -1,6 +1,7 @@
 package graphs;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.HashMap;
 
 public class GraphMatrice implements GraphMethod{
@@ -16,7 +17,7 @@ public class GraphMatrice implements GraphMethod{
         String alphabet = "ABCDEFGHIJKLMNOPQRSTUWXZY";
         return alphabet.indexOf(lettre);
     }
-    public char getIndexFromChar(int index){
+    public char getCharFromIndex(int index){
         String alphabet = "ABCDEFGHIJKLMNOPQRSTUWXZY";
         return alphabet.charAt(index);
     }
@@ -24,30 +25,37 @@ public class GraphMatrice implements GraphMethod{
 
     public void addRelation(Node source,Node dest){
         // ajoute une relation(arête) entre les 2 noeuds(sommets) spécifiés
-        matriceRelations[getIndexFromChar(dest.getName())][getIndexFromChar(source.getName())] = 1;
+        matriceRelations[getIndexFromChar(source.getName())][getIndexFromChar(dest.getName())] = 1;
     }
 
     public boolean existeRelation(Node source, Node dest){
         //indique si une relation existe entre ces 2 noeuds
-        return matriceRelations[getIndexFromChar(dest.getName())][getIndexFromChar(source.getName())] == 1;
+        return matriceRelations[getIndexFromChar(source.getName())][getIndexFromChar(dest.getName())] == 1;
     }
 
     public boolean existeChemin(Node source,Node dest){
         //qui indique si un chemin existe entre ces 2 noeuds :
         // retournera donc true pour existeChemin(A,E), mais false pour existeChemin(A,H) !
-
-        return parcoursGraph(source.getName(), "").indexOf(dest.getName()) != -1;
+        //System.out.println("Nodes accessibles depuis "+source.getName()+": "+parcoursGraph(source.getName(), new ArrayList<>()));
+        return parcoursGraph(source.getName(), new ArrayList<>()).contains(String.valueOf(dest.getName()));
     }
 
-    private String parcoursGraph(char letter, String relations){
-        if(relations.indexOf(letter) == -1){
+    private ArrayList<String> parcoursGraph(char letter, ArrayList<String> relations){
+
+        if(!relations.contains(String.valueOf(letter))){
             // save node as visited
-            relations+=letter;
+            relations.add(String.valueOf(letter));
 
             // parcours relations
             int[] relationArray = matriceRelations[getIndexFromChar(letter)];
+            //System.out.println("relations from "+letter+": "+ Arrays.toString(relationArray));
+
+            int indexLine = 0;
             for (int nodeRelation: relationArray) {
-                parcoursGraph(getIndexFromChar(nodeRelation), relations);
+                if(nodeRelation == 1){
+                    parcoursGraph(getCharFromIndex(indexLine), relations);
+                }
+                indexLine++;
             }
         }
         return relations;
