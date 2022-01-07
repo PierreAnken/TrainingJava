@@ -37,14 +37,14 @@ public class GraphMatrice implements GraphMethod{
         //qui indique si un chemin existe entre ces 2 noeuds :
         // retournera donc true pour existeChemin(A,E), mais false pour existeChemin(A,H) !
         //System.out.println("Nodes accessibles depuis "+source.getName()+": "+parcoursGraph(source.getName(), new ArrayList<>()));
-        return parcoursGraph(source.getName(), new ArrayList<>()).contains(String.valueOf(dest.getName()));
+        return parcoursGraph(source.getName(), "").contains(String.valueOf(dest.getName()));
     }
 
-    private ArrayList<String> parcoursGraph(char letter, ArrayList<String> relations){
+    private String parcoursGraph(char letter, String relations){
 
         if(!relations.contains(String.valueOf(letter))){
             // save node as visited
-            relations.add(String.valueOf(letter));
+            relations+=letter;
 
             // parcours relations
             int[] relationArray = matriceRelations[getIndexFromChar(letter)];
@@ -53,7 +53,7 @@ public class GraphMatrice implements GraphMethod{
             int indexLine = 0;
             for (int nodeRelation: relationArray) {
                 if(nodeRelation == 1){
-                    parcoursGraph(getCharFromIndex(indexLine), relations);
+                    relations = parcoursGraph(getCharFromIndex(indexLine), relations);
                 }
                 indexLine++;
             }
