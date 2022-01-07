@@ -57,21 +57,10 @@ public class ArbreListe implements Arbre {
         Object[] dataA = getNodeDataFromName(nom1, racine, null, 0);
         Object[] dataB = getNodeDataFromName(nom2, racine, null, 0);
 
-        /*for (Object object:dataA) {
-            System.out.println(object);
-        }
-        for (Object object:dataB) {
-            System.out.println(object);
-        }
-        System.out.println("======");*/
-
         // pères différents?
         if(dataA[2] != dataB[2]) {
-
             //même niveau?
-            if(dataA[1] == dataB[1]) {
-                return true;
-            }
+            return dataA[1] == dataB[1];
         }
 
         return false;
