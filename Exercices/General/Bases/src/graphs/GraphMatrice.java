@@ -6,19 +6,17 @@ import java.util.HashMap;
 
 public class GraphMatrice implements GraphMethod{
 
-    int[][] matriceRelations;
-
+    private int[][] matriceRelations;
+    private final String alphabet = "ABCDEFGHIJKLMNOPQRSTUWXZY";
 
     public GraphMatrice(int nombreNeuds){
         matriceRelations = new int[nombreNeuds][nombreNeuds];
     }
 
     public int getIndexFromChar(char lettre){
-        String alphabet = "ABCDEFGHIJKLMNOPQRSTUWXZY";
         return alphabet.indexOf(lettre);
     }
     public char getCharFromIndex(int index){
-        String alphabet = "ABCDEFGHIJKLMNOPQRSTUWXZY";
         return alphabet.charAt(index);
     }
 
@@ -36,7 +34,6 @@ public class GraphMatrice implements GraphMethod{
     public boolean existeChemin(Node source,Node dest){
         //qui indique si un chemin existe entre ces 2 noeuds :
         // retournera donc true pour existeChemin(A,E), mais false pour existeChemin(A,H) !
-        //System.out.println("Nodes accessibles depuis "+source.getName()+": "+parcoursGraph(source.getName(), new ArrayList<>()));
         return parcoursGraph(source.getName(), "").contains(String.valueOf(dest.getName()));
     }
 
@@ -48,12 +45,11 @@ public class GraphMatrice implements GraphMethod{
 
             // parcours relations
             int[] relationArray = matriceRelations[getIndexFromChar(letter)];
-            //System.out.println("relations from "+letter+": "+ Arrays.toString(relationArray));
 
             int indexLine = 0;
             for (int nodeRelation: relationArray) {
                 if(nodeRelation == 1){
-                    relations = parcoursGraph(getCharFromIndex(indexLine), relations);
+                   relations = parcoursGraph(getCharFromIndex(indexLine), relations);
                 }
                 indexLine++;
             }
