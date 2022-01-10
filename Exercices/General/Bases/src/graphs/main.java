@@ -3,7 +3,7 @@ package graphs;
 public class main {
     public static void main(String[] args) {
 
-        GraphMethod graph = new GraphMatrice(8);
+        GraphMethod graph = new GraphRelation();
         Node A = new Node('A', "A");
         Node B = new Node('B', "B");
         Node C = new Node('C', "C");
