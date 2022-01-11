@@ -1,4 +1,4 @@
-package Practice.People;
+package Practice.FootballClub.People;
 
 public abstract class Person {
     protected String firstName;

@@ -1,4 +1,4 @@
-package Practice.People;
+package Practice.FootballClub.People;
 
 public class Coach extends Person{
 

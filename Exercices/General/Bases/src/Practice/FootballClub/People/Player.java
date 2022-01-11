@@ -1,4 +1,4 @@
-package Practice.People;
+package Practice.FootballClub.People;
 
 public class Player extends Person {
     private PlayerType playerType;
@@ -11,6 +11,11 @@ public class Player extends Person {
         this.playerType = playerType;
         this.valueCHF = valueCHF;
     }
+
+    public PlayerType getPlayerType() {
+        return playerType;
+    }
+
     public String toString(){
         return super.toString() +" "+playerType+ " "+valueCHF+ "CHF" ;
     }
