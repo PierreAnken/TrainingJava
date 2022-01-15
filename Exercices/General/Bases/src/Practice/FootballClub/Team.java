@@ -1,4 +1,8 @@
-package Practice.FootballClub.People;
+package Practice.FootballClub;
+
+import Practice.FootballClub.People.Person;
+import Practice.FootballClub.People.Player;
+import Practice.FootballClub.People.PlayerType;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -29,7 +33,7 @@ public class Team {
         }
     }
 
-    public List<Player> getPlayerByType(PlayerType playerType){
+    public List<Player> getPlayersByType(PlayerType playerType){
         List<Player> playersByType = new ArrayList<>();
         for (Person player: players) {
             if(((Player)player).getPlayerType() == playerType){

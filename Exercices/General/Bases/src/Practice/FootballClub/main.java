@@ -32,6 +32,6 @@ public class main {
         t2.addPeople(List.of(p7, p8, p9, p10, p11, p12, c2));
 
         Match m1 = new Match(t1, t2, f1);
-
+        m1.Start();
     }
 }
