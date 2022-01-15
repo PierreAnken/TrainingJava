@@ -3,19 +3,12 @@ package Graphs;
 
 public class Relation {
 
-    private Node source;
-    private Node dest;
-    private int cost;
+    private final Node source;
+    private final Node dest;
 
     public Relation (Node source, Node dest){
         this.source = source;
         this.dest = dest;
-    }
-
-    public Relation (Node source, Node dest, int cost){
-        this.source = source;
-        this.dest = dest;
-        this.cost = cost;
     }
 
     public Node getSource() {
@@ -26,14 +19,10 @@ public class Relation {
         return dest;
     }
 
-    public int getCost() {
-        return cost;
-    }
-
     @Override
     public boolean equals(Object o) {
-        if (!(o instanceof Relation)) return false;
-        Relation relation = (Relation) o;
+        if (!(o instanceof Relation relation)) return false;
+
         return source.getName() == relation.source.getName()
                 && dest.getName() == relation.dest.getName();
     }
