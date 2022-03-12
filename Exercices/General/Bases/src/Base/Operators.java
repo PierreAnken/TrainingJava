@@ -2,6 +2,7 @@ package Base;
 
 public class Operators {
     public static void main(String[] args) {
+
         float a = 1+1*2/3-2;
 
         System.out.println(5%2);
@@ -13,7 +14,7 @@ public class Operators {
         b+=3;
         b++;
 
-        System.out.println(3 != 5 && !false);
+        System.out.println(3 != 5 && !false || true);
 
     }
 }

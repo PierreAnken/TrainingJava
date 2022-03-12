@@ -22,7 +22,7 @@ public class Loops {
             numberWhile++;
         }
 
-        System.out.println("\n\nDoWhile");
+        System.out.println("\n\nDo While");
         int numberDoWhile = 0;
         do{
             System.out.print(numberDoWhile+" ");

@@ -22,13 +22,19 @@ public class Conditions {
         switch (alte){
             case 18:
                 System.out.println("Alte == 18");
-                case 17:
-                    System.out.println("Alte == 17");
+                break;
+            case 17:
+                System.out.println("Alte == 17");
+                break;
             default:
                 System.out.println("Alte xxx");
         }
 
-
+        switch (alte) {
+            case 18 -> System.out.println("Alte == 18");
+            case 17 -> System.out.println("Alte == 17");
+            default -> System.out.println("Alte xxx");
+        }
 
     }
 }

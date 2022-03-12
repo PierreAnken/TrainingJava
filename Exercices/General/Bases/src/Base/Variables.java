@@ -17,7 +17,6 @@ public class Variables {
         System.out.println(myNum);
         System.out.println(object);
 
-
         int myNum2 = myNum;
         System.out.println(myNum2);
 
@@ -28,16 +27,20 @@ public class Variables {
         System.out.println(object);
         System.out.println(object2);
 
+        System.out.println("=== Arrays === ");
         int[] myArray = new int[5];
         myArray[0] = 1;
+        System.out.println(myArray);
 
+        System.out.println("=== ArrayList === ");
         ArrayList<Integer> myList = new ArrayList<>();
         myList.add(5);
+        System.out.println(myList);
 
+        System.out.println("=== Casting === ");
         double myDouble = 9.78d;
         int myInt = (int) myDouble;
         System.out.println(myInt);
-
 
     }
 }
