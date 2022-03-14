@@ -14,9 +14,9 @@ public class Team {
         players = new ArrayList<>();
     }
 
-    public String toString(){
-        StringBuilder sb = new StringBuilder(divison+" "+ name+" :\n");
-        for (FootballPlayer currentPlayer:players) {
+    public String toString() {
+        StringBuilder sb = new StringBuilder(divison + " " + name + " :\n");
+        for (FootballPlayer currentPlayer : players) {
             sb.append(" - ");
             sb.append(currentPlayer);
             sb.append("\n");
@@ -28,5 +28,8 @@ public class Team {
         players.add(newPlayer);
     }
 
+    public String getName() {
+        return name;
+    }
 
 }

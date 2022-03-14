@@ -22,5 +22,10 @@ public class Program {
 
         System.out.println(t1);
 
+        Manager m1 = new Manager("James Bond", Gender.MALE);
+        m1.addTeam(t1);
+
+        System.out.println(m1);
+
     }
 }
