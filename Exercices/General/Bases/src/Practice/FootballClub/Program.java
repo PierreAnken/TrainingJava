@@ -26,6 +26,6 @@ public class Program {
         m1.addTeam(t1);
 
         System.out.println(m1);
-
+        
     }
 }

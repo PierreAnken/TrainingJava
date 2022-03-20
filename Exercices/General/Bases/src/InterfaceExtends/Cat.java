@@ -12,4 +12,9 @@ public class Cat extends Animal{
         this.name = name;
         this.hairColor = hairColor;
     }
+
+    @Override
+    public void sayHello() {
+        System.out.println("Miaou!");
+    }
 }

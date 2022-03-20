@@ -2,9 +2,9 @@ package Practice.FootballClub;
 
 abstract class Person {
 
-    protected final String name;
+    protected  String name;
 
-    protected final Gender gender;
+    protected  Gender gender;
 
     public Person(String name, Gender gender) {
         this.name = name;

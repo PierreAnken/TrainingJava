@@ -14,9 +14,12 @@ public class main {
 
         for (InfoInterface animal: animals) {
             animal.giveInfo();
+            ((SayHello)animal).sayHello();
             System.out.println(animal.getClass());
-            System.out.println("instanceof Animal ?n"+ (animal instanceof Animal));
+            System.out.println("instanceof Animal ?"+ (animal.getClass().getSimpleName().equals("Animal")));
             System.out.println("instanceof InfoInterface ? "+ (animal instanceof InfoInterface));
+            System.out.println("instanceof SayHello ? "+ (animal instanceof Cat));
+            System.out.println();
         }
 
     }
