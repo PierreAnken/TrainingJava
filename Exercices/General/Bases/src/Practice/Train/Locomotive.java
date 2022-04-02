@@ -2,12 +2,20 @@ package Practice.Train;
 
 public class Locomotive extends Wagon {
 
-    private final float coal_by_km_and_kg = 0.05f;
+    private final float coal_by_km_and_kg = 0.02f;
     private float remaining_coal;
     private float traveled_km;
 
-    public Locomotive(int weight, int length, Wagon rearWagon) {
-        super(weight, length, rearWagon, WagonType.LOCOMOTIVE);
+    public Locomotive(int length, Wagon rearWagon) {
+        super(length, rearWagon, WagonType.LOCOMOTIVE);
+    }
+
+    public int GetWeight(){
+        return 500 + (int)GetCoalWeight();
+    }
+
+    public int GetCoalWeight(){
+        return (int)(remaining_coal * 0.1f);
     }
 
     public void Travel(float km) {
@@ -27,33 +35,50 @@ public class Locomotive extends Wagon {
     }
 
     private float TrainWeight() {
-        float totalWeight = weight;
+        float totalWeight = this.GetWeight();
         Wagon currentWagon = this;
 
         while (currentWagon.wagonInRear != null) {
             currentWagon = currentWagon.wagonInRear;
-            totalWeight += currentWagon.weight;
+            totalWeight += currentWagon.GetWeight();
         }
         System.out.println("Train weight: "+ totalWeight);
         return totalWeight;
     }
 
-    public boolean LoadPassenger(int numPassenger) {
+    // [200] - [200] - [150] - |_250]>
+    public void DisplayComposition() {
 
-    }
+        StringBuilder sb = new StringBuilder("|"+ (GetWeight()-GetCoalWeight())+"_"+ GetCoalWeight()+"]>");
 
-    private int FreeSeats() {
-        int freeSeatsCount = 0;
+        // Get through all wagons and gather weight
         Wagon currentWagon = this;
         while (currentWagon.wagonInRear != null) {
             currentWagon = currentWagon.wagonInRear;
-            if (currentWagon.wagonType == WagonType.PASSENGER){
-                int freeSeatInWagon = Wagon.passenger_by_wagon-((int)currentWagon.storage.size());
-
-            }
+            // Complete the drawing with current wagon
+            sb.insert(0,"["+currentWagon.GetWeight()+"] - ");
         }
-        System.out.println("Train weight: "+ totalWeight);
-        return totalWeight;
+        System.out.println(sb);
+
     }
+
+
+//    public boolean LoadPassenger(int numPassenger) {
+//
+//    }
+
+//    private int FreeSeats() {
+//        int freeSeatsCount = 0;
+//        Wagon currentWagon = this;
+//        while (currentWagon.wagonInRear != null) {
+//            currentWagon = currentWagon.wagonInRear;
+//            if (currentWagon.wagonType == WagonType.PASSENGER){
+//                int freeSeatInWagon = Wagon.passenger_by_wagon-((int)currentWagon.storage.size());
+//
+//            }
+//        }
+//        System.out.println("Train weight: "+ totalWeight);
+//        return totalWeight;
+//    }
 
 }

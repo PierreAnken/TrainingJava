@@ -4,19 +4,22 @@ import java.util.ArrayList;
 
 public class Wagon<T> {
 
-    protected int weight;
     protected int length;
     protected Wagon wagonInRear;
     protected ArrayList<T> storage;
     protected WagonType wagonType;
-    static float passenger_by_wagon = 20;
 
-    public Wagon(int weight, int length, Wagon wagonInRear, WagonType wagonType) {
-        this.weight = weight;
+    static final int MAX_STORAGE_SIZE = 20;
+
+    public Wagon( int length, Wagon wagonInRear, WagonType wagonType) {
         this.length = length;
         this.wagonInRear = wagonInRear;
         this.storage = new ArrayList<>();
         this.wagonType = wagonType;
+    }
+
+    public int GetWeight(){
+        return 200;
     }
 
 
