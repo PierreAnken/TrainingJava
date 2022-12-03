@@ -1,4 +1,4 @@
-package EqualsIterator;
+package Iterator;
 
 import java.util.ArrayList;
 import java.util.Iterator;
@@ -8,7 +8,7 @@ public class IteratorExercice {
 
     public static void main(String[] args) {
 
-        ArrayList<Integer> numbers = new ArrayList();
+        ArrayList<Integer> numbers = new ArrayList<>();
         for (int i = 1; i <= 20; i++) {
             numbers.add(i);
         }

@@ -11,8 +11,7 @@ public class Document {
 
         String data = "This is a text inside the file.";
         try {
-            PrintStream file_output = new PrintStream("D:\\Repos\\JavaTrainingStudent\\Exercices\\General\\Bases\\src\\FilesManipulation\\output.txt");
-
+            PrintStream file_output = new PrintStream("Bases/src/FilesManipulation/output.txt");
             file_output.println(data);
             file_output.append("I'm the second text");
 

@@ -1,7 +1,5 @@
 package Practice.Restaurant;
 
-import javax.lang.model.element.Name;
-
 public class Cook extends KitchenWorker{
 
     public Cook(String name) {

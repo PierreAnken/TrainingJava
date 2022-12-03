@@ -2,7 +2,7 @@ package GenericTypes;
 
 public class Dashboard implements CheckPassword{
 
-    private String password;
+    private final String password;
 
     public Dashboard(String password) {
         this.password = password;

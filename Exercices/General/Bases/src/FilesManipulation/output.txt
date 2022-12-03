@@ -1,2 +1,0 @@
-This is a text inside the file.
-I'm the second text
